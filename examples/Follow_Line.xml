@@ -1,0 +1,169 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="E0vr/^]F`(9%f!eGfTgO" x="304" y="-5">
+    <field name="VAR">SensorL</field>
+    <comment pinned="false" h="80" w="160">Declare Variable</comment>
+    <value name="VALUE">
+      <block type="sensor_analog_read" id="Y/]3,|J(Y*7n8O@N,)Od">
+        <field name="PIN">A0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="#bct7;FC`~:A.{}/ROuq">
+        <field name="VAR">SensorR</field>
+        <value name="VALUE">
+          <block type="sensor_analog_read" id="k`Y|A_Nwtfz/{PykD)C-">
+            <field name="PIN">A0</field>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+  <block type="inex_board" id="aq:#9RZti.-jB;DUmChQ" x="38" y="23">
+    <field name="Board">ipst</field>
+    <comment pinned="false" h="80" w="160">if you need use other board, you can choose board on dropdown.</comment>
+  </block>
+  <block type="switch_ok" id="I@FsJ,n?s@=.Ga*2jUJ}" x="38" y="69"></block>
+  <block type="arduino_functions" id="@+EuA*={n_=SOU({]B7h" x="37" y="113">
+    <statement name="LOOP_FUNC">
+      <block type="controls_if" id=")OMRDFX:H[Rjm;H/*j:^">
+        <mutation elseif="2"></mutation>
+        <comment pinned="false" h="80" w="160">Logic if,else</comment>
+        <value name="IF0">
+          <block type="logic_operation" id="u{nQ}3eE?8A|.o,W@u7-">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="@{QURI]i)P)JXh^+-b|G">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="osr+6i[YRcDcHYbUGERR">
+                    <field name="VAR">SensorL</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="XeK@GL:});n%L4l/6w*/">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="jFIAv)=HwMGw3]/LU:rG">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="[9tMMqp,i#zT,kOzouf,">
+                    <field name="VAR">SensorR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="#o%;Ht85RDY[A?z0z=#m">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="move" id="/iQdm2!F`tlNwb{s82`%">
+            <field name="STAT">fd</field>
+            <value name="speed">
+              <block type="math_number" id="Ji6hL,6+YFNm^:0M;e~J">
+                <field name="NUM">50</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_operation" id="g0^,KbWt.2vhlczaN[5j">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="pU+%]@iMeK}iJKC-0Ci}">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get" id="gLUiQ5LEy)n;c]CMmGR%">
+                    <field name="VAR">SensorL</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="d`=IRzcq+nlHKuT!GUJ~">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="@uXI39=32:mMu(o#0qG#">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="`8V8CO{s(/Ws0j+!8lHl">
+                    <field name="VAR">SensorR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="P~*7Z#AzA490R!KsikX?">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="spin" id="E`~_mPfhgBw+qU5%/q3@">
+            <field name="STAT">sl</field>
+            <value name="speed">
+              <block type="math_number" id="+P%npKijtAz)}#D,sw:-">
+                <field name="NUM">50</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF2">
+          <block type="logic_operation" id="27I0gizZAk1qI1^9G!5a">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="BR@rV=8/l/qTe@s^i0W=">
+                <field name="OP">GT</field>
+                <value name="A">
+                  <block type="variables_get" id="Ofd2eN62IUqubNuY2=s0">
+                    <field name="VAR">SensorL</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="vNj5Ujr4KJhD[0j8R5gF">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="(7H1*(w}JND~(HL95ZO-">
+                <field name="OP">LT</field>
+                <value name="A">
+                  <block type="variables_get" id="3rE;H75x3C8oSKPKLA9}">
+                    <field name="VAR">SensorR</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="math_number" id="xm*P]CI|-j=Uv^,r=qj!">
+                    <field name="NUM">400</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO2">
+          <block type="spin" id="Tx[bSJ.Sghi+T8af~lm.">
+            <field name="STAT">sr</field>
+            <value name="speed">
+              <block type="math_number" id="|YjV}Xi#y%MfR.GX^8f;">
+                <field name="NUM">50</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>

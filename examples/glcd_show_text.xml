@@ -1,0 +1,19 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="X*|AOT^i@2VGIC;efB}*" x="281" y="115">
+    <field name="Board">ipst</field>
+  </block>
+  <block type="glcd_set_text_color" id="-!FDchHP%+ZA=ef{3wx#" x="277" y="179">
+    <field name="COLOR">GLCD_BLUE</field>
+    <next>
+      <block type="glcd_set_text_size" id="H!|vFz:|=q4D+P[CGDtl">
+        <field name="SIZE">1</field>
+        <next>
+          <block type="glcd_text" id="r~;b~LA6uD)QpWr{cRjC">
+            <field name="ROW">0</field>
+            <field name="TXT">Hello World</field>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

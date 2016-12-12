@@ -1,0 +1,50 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="([b]Wvh4%U~Dvg,uiOd[" x="201" y="50">
+    <field name="Board">ipst</field>
+  </block>
+  <block type="variables_set" id="T1{VGJ`q:bD8)3YdUwRe" x="194" y="152">
+    <field name="VAR">x</field>
+    <value name="VALUE">
+      <block type="knob" id="qWa`@][][tJ!~XJw_Qwv">
+        <value name="VALUE">
+          <block type="math_number" id="+%lqr^E}b~|U9HxcZS%W">
+            <field name="NUM">180</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="servo_angle" id="]?]GS5QNz{.3~J!KMT)X">
+        <field name="PIN">1</field>
+        <value name="NUM">
+          <block type="variables_get" id="/C@oS[ozr[x~a2(`T(}f">
+            <field name="VAR">x</field>
+          </block>
+        </value>
+        <next>
+          <block type="glcd_set_text_size" id="i)`0}ZDP+LwP=ExWI%;{">
+            <field name="SIZE">2</field>
+            <next>
+              <block type="glcd_set_text_color" id="|={e4(Y53,?SR0Vw#sah">
+                <field name="COLOR">GLCD_WHITE</field>
+                <next>
+                  <block type="glcd_variable_text" id="5,Yp[u2{*5-+:7__NgV!">
+                    <field name="VAR_TYPE">%d</field>
+                    <field name="ROW">1</field>
+                    <field name="PREFIX">KNOB = </field>
+                    <field name="SUBFIX">   </field>
+                    <value name="VARIABLE_SETTYPE_INPUT">
+                      <block type="variables_get" id="~3|vzj_71XeObrL,l2*5">
+                        <field name="VAR">x</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

@@ -1,0 +1,74 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="A=oWprq#GCBocX~d%eCq" x="19" y="-41">
+    <field name="Board">ipst</field>
+  </block>
+  <block type="controls_if" id="nX0oVcy7xWxS?5zH*^.}" x="19" y="8">
+    <comment pinned="false" h="80" w="160">Switch port 16
+LED port 19,20
+    </comment>
+    <value name="IF0">
+      <block type="logic_compare" id="1+1eq2Qj5ZT0r9rRK}nQ">
+        <field name="OP">EQ</field>
+        <value name="A">
+          <block type="sensor_digital_in" id="QEtE.6(~Y|=qP6;2cQ|{">
+            <field name="PIN">16</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="logic_boolean" id="~Phi[%:UiuKOYD|Jd,:1">
+            <field name="BOOL">FALSE</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="variables_set" id="r@.mFQ?X]oNLOqsb62|B">
+        <field name="VAR">status</field>
+        <value name="VALUE">
+          <block type="logic_negate" id="=y4yL8}|VI+n/K[Z2xBL">
+            <value name="BOOL">
+              <block type="variables_get" id="C:Sr`WF@ibx,o=/i`(88">
+                <field name="VAR">status</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="out_set" id="81v%[qgk{A3CGvPDcqQh">
+            <field name="PIN">19</field>
+            <value name="STAT">
+              <shadow type="math_number" id="#0,u=9{`z*JQ+Mlyb=z}">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="qA{jwEgrzBI,VEm^G)lr">
+                <field name="VAR">status</field>
+              </block>
+            </value>
+            <next>
+              <block type="out_set" id="+1fOUhj.4Z(|8]QJ30/r">
+                <field name="PIN">20</field>
+                <value name="STAT">
+                  <shadow type="math_number" id="c_|yJ`W`+[2m4HVp+Fn-">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="4PMITexo}_mQDGt(xG@4">
+                    <field name="VAR">status</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="time_delay" id="7ESmDxKO%N%{%to(I*q7">
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="[VDx.%tKr]{b53YU#5cI">
+                        <field name="NUM">200</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

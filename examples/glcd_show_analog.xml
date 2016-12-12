@@ -1,0 +1,17 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="X*|AOT^i@2VGIC;efB}*" x="281" y="115">
+    <field name="Board">ipst</field>
+  </block>
+  <block type="glcd_variable_text" id="}r7govq3Q6sOm|v`fCwJ" x="281" y="165">
+    <field name="VAR_TYPE">%d</field>
+    <field name="ROW">0</field>
+    <field name="PREFIX">Value =  </field>
+    <field name="SUBFIX"></field>
+	<comment pinned="false" h="80" w="160">input sensor Analog port A1</comment>
+    <value name="VARIABLE_SETTYPE_INPUT">
+      <block type="sensor_analog_read" id="4TWn%!+s3Ka*u*5ZU0Zu">
+        <field name="PIN">A1</field>
+      </block>
+    </value>
+  </block>
+</xml>

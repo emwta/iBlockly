@@ -1,0 +1,1245 @@
+/**
+ * @license Licensed under the Apache License, Version 2.0 (the "License"):
+ *          http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * @fileoverview CSS file for the Ardublockly application.
+ *
+ * There are a lot of '!important' tags in this file as a lot of the rules set
+ * here go against the css rules from the Materialize framework.
+ */
+/******************/
+/*  Font sources  */
+/******************/
+@font-face {
+  font-family: "Droid Sans Mono";
+  src: url("font/droid/DroidSansMono.ttf") format("truetype");
+}
+
+
+/**********/
+/*  HTML  */
+/**********/
+html,
+body {
+  height: 100% !important;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color:  #51c1b4;  /*rgba(255, 204, 51, 1); /*#eeeeee*/
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+/*********************/
+/*  Arduino Colours  */
+/*********************/
+/*Screen Color*/
+.arduino_header_and_footer {
+  background-color: #39842e; /*#2a5399*/
+}
+
+.arduino_teal {
+  background-color: #61b79a; /*#2a5399*/
+}
+.arduino_teal_dark {
+  background-color: #006468;
+  /* background-color: #00878F; from community logo */
+}
+.arduino_teal_light {
+  background-color: #62AEB2;
+}
+.arduino_orange {
+  background-color: #E47128;  /*#E47128*/
+}
+.arduino_yellow {
+ background-color: rgba(255, 204, 51, 1);
+   /*background-color: #FFCC33; */
+  /* background-color: #E5AD24; from community logo */
+}
+.arduino_brown {
+  background-color: #8C7965;
+}
+
+.arduino_blueteal{
+ background-color: #007481;
+}
+
+
+/********************/
+/*  Navigation bar  */
+/********************/
+.nav-fixed {
+  border-radius: 0;
+  position: inherit;
+  margin-bottom: 30px;
+  z-index: 997 !important;
+ 
+}
+@media only screen and (min-width : 993px) {
+  body {
+    padding-top: 100px;
+  
+  }
+  .nav-fixed {
+    position: fixed;
+    right: 0px;
+    left: 0px;
+    top: 0;
+    margin-bottom: 0px;
+    z-index: 997;
+    box-shadow: 5px;
+   
+  }
+}
+
+/* Side nav Logo */
+ul.side-nav li.logo {
+  text-align: center;
+  margin: 0px !important;
+  padding: 0px 0px !important;
+  border: none !important;
+  height: 210px;
+  background-color: transparent;
+}
+ul.side-nav li.logo:hover {
+  background-color: transparent;
+}
+ul.side-nav li.side-menu-end {
+  background-color: #91d5d6;
+  border-radius: 0px 0px 25px 0px;
+  border-left: 4px solid #ffffff;
+  border-bottom: 4px solid #dddddd;
+  border-right: 4px solid #dddddd;
+  border-bottom: 4px solid #dddddd;
+  line-height: 25px;
+}
+
+/************************************/
+/*  Blocks, Arduino, and XML areas  */
+/************************************/
+.content {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #ffffff;
+}
+.height_transition {
+  transition: height 0.2s ease-out;
+  -ms-transition: height 0.2s ease-out;
+  -moz-transition: height 0.2s ease-out;
+  -webkit-transition: height 0.2s ease-out;
+}
+
+#blocks_panel {
+  padding: 0px;
+  position: inherit !important;  
+}
+
+.blocks_panel_large {
+  height: -moz-calc(100vh - 109px);     /* Firefox  */
+  height: -webkit-calc(100vh - 109px);  /* WebKit   */
+  height: -o-calc(100vh - 109px);       /* Opera    */
+  height: calc(100vh - 109px);          /* Standard */
+ 
+}
+.blocks_panel_small { 
+  height: -moz-calc(100vh - 270px);     /* Firefox  */
+  height: -webkit-calc(100vh - 270px);  /* WebKit   */
+  height: -o-calc(100vh - 270px);       /* Opera    */
+  height: calc(100vh - 270px);          /* Standard */
+}
+#content_blocks {
+  margin: 0;
+  padding: 0;  
+  height: -moz-calc(100vh - 109px);     /* Firefox  */
+  height: -webkit-calc(100vh - 109px);  /* WebKit   */
+  height: -o-calc(100vh - 109px);       /* Opera    */
+  height: calc(100vh - 109px);          /* Standard */
+}
+
+
+#content_xml {
+  resize: none;
+  margin-right: 0;
+  outline: none;
+  border: none;
+  border-style: none;
+  border-color: #007481;
+  padding: 0px 5px;
+  font-family: monospace;
+  font-size: smaller;
+  overflow: scroll;
+  font-style: 0.2em !important; 
+
+}
+.content_xml_large {
+  height: -moz-calc(100vh - 210px);     /* Firefox  */
+  height: -webkit-calc(100vh - 210px);  /* WebKit   */
+  height: -o-calc(100vh - 210px);       /* Opera    */
+  height: calc(100vh - 210px);          /* Standard */
+}
+.content_xml_small {
+  height: -moz-calc(100vh - 370px);     /* Firefox  */
+  height: -webkit-calc(100vh - 370px);  /* WebKit   */
+  height: -o-calc(100vh - 370px);       /* Opera    */
+  height: calc(100vh - 370px);          /* Standard */
+}
+
+/* The materialize framework changes height of the div to show or hide */
+/* the collapsible elements. */
+#content_arduino {
+  resize: none;
+  outline: none;
+  border-style: none;  
+  line-height: 20px !important;
+  padding: 0px 5px;
+  font-size: 0.9rem;
+  font-family: "Droid Sans Mono", monospace;
+  overflow: auto;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  
+}
+.content_arduino_large {
+  height: -moz-calc(100vh - 203px);     /* Firefox  */
+  height: -webkit-calc(100vh - 203px);  /* WebKit   */
+  height: -o-calc(100vh - 203px);       /* Opera    */
+  height: calc(100vh - 203px);         /* Standard */
+}
+.content_arduino_small {
+  height: -moz-calc(100vh - 365px);     /* Firefox  */
+  height: -webkit-calc(100vh - 365px);  /* WebKit   */
+  height: -o-calc(100vh - 365px);       /* Opera    */
+  height: calc(100vh - 365px);          /* Standard */
+}
+/****************/
+/*  IDE output  */
+/****************/
+.ide_output_wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  bottom: -16px;
+  z-index: 10;
+}
+
+.ide_output_collapsible {
+  box-shadow: 0 0px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-left: 0;
+  border-right: 0;
+}
+.ide_output_header_normal {
+  background-color: #61b79a;     /*#006468*//* footer clour*/
+  color: #ffffff;
+  -moz-transition: background-color 0.6s ease-in;;
+  -o-transition: background-color 0.6s ease-in;
+  -webkit-transition: background-color 0.6s ease-in;
+}
+.ide_output_header_highlight {
+  background-color: #62AEB2;
+  color: #ffffff;
+  -moz-transition: background-color 0.6s ease-in;;
+  -o-transition: background-color 0.6s ease-in;
+  -webkit-transition: background-color 0.6s ease-in;
+}
+.ide_output_header_error {
+  background-color: #E47128;
+  color: #ffffff;
+  -moz-transition: background-color 0.6s ease-in;;
+  -o-transition: background-color 0.6s ease-in;
+  -webkit-transition: background-color 0.6s ease-in;
+}
+
+#content_ide_output {
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 0px 5px;
+  font-family: monospace;
+  overflow: auto;
+  font-style: 0.2em !important;
+  min-height: 160px;
+  max-height: 160px;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  background-color: #303030;
+  color: #ffffff;
+}
+/* IDE output content text formatting */
+#content_ide_output .arduino_dialog_success {
+  color: #00979C;   /* arduino light teal */
+  font-size: 1.2rem;
+  margin: 16px 0px 8px 0px;
+}
+#content_ide_output .arduino_dialog_failure {
+  color: #E47128;   /* arduino orange */
+  font-size: 1.2rem;
+  margin: 16px 0px 8px 0px;
+}
+#content_ide_output .arduino_dialog_out {
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+#content_ide_output .arduino_dialog_out_error {
+  color: #E47128;   /* arduino orange */
+  font-size: 0.9rem;
+  padding-top: 8px;
+  display: block;
+}
+
+/* Spacer is used to not leave any content behind the collapsible header */
+#ide_output_spacer {
+  height: 40px;
+}
+@media only screen and (min-width: 0) {
+  #ide_output_spacer {
+    height: 20px;
+  }
+}
+@media only screen and (min-width: 601px) {
+  #ide_output_spacer {
+    height: 30px;
+  }
+}
+@media only screen and (min-width: 993px) {
+  #ide_output_spacer {
+    height: 40px;
+  }
+}
+
+
+/*************/
+/*  Buttons  */
+/*************/
+#ide_buttons_wrapper {
+  position: absolute;
+  right: 160px;
+  top: 35px;
+  height: 55px;
+  width: 160px;
+  z-index: 12;
+}
+#button_ide_large {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 55px;
+  height: 55px;
+}
+#button_ide_large i {
+  font-size: 2.4rem !important;
+  line-height: 55px;
+}
+#button_ide_middle {
+  position: absolute;
+  right: -50px;
+  top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -o-transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+#button_ide_left {
+  position: absolute;
+  right: -100px;
+  top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  -moz-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear;
+  -o-transition: visibility 0.3s linear, opacity 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear;
+}
+#button_ide_large:hover:before,
+#button_ide_middle:hover:before,
+#button_ide_left:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,255,255, 0.25);
+  transition: all .3s linear;
+}
+
+#button_load_xml {
+  position: absolute;
+  right: 36px;
+  bottom: 36px;
+  display: none;
+}
+#button_load_xml .mdi-action-extension {
+  font-size: 2.1rem !important;
+}
+
+/* These floating buttons needs to be at a higher z index than card when */
+/* floating and lower when clicked.  */
+#button_ide_large:hover,
+#button_ide_middle:hover,
+#button_ide_left:hover,
+#button_load_xml:hover {
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#button_ide_large:active,
+#button_ide_middle:active,
+#button_ide_left:active,
+#button_load_xml:active {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Toggle the toolbox on and off button */
+.button_toggle_toolbox_on {
+  position: absolute;
+  margin: 0 !important;
+  padding: 0 !important;
+  left: 12px;
+  top: 8px;
+  text-align: center;
+  font-size: 1.5rem !important;
+  z-index: 5;
+  border-color: #e0e0e0 !important;
+  border-width: 1px !important;
+  -webkit-border-radius: 4px 4px 4px 4px !important;
+  -moz-border-radius: 4px 4px 4px 4px !important;
+  border-radius: 4px 4px 4px 4px !important;
+  background: rgba(98, 174, 178, .2) !important;  /* Arduino Light Teal Background*/
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+  transition: background 0.3s linear, box-shadow 0.3s linear, border-width 0.3s linear;
+  -ms-transition: background 0.3s linear, box-shadow 0.3s linear, border-width 0.3s linear;
+  -moz-transition: background 0.3s linear, -moz-box-shadow 0.3s linear, border-width 0.3s linear;
+  -webkit-transition: background 0.3s linear, -webkit-box-shadow 0.3s linear, border-width 0.3s linear;
+}
+.button_toggle_toolbox_off {
+  position: absolute;
+  margin: 0 !important;
+  padding: 0px !important;
+  left: 12px;
+  top: 8px;
+  text-align: center;
+  font-size: 1.5rem !important;
+  z-index: 5;
+  
+}
+
+
+/*****************************/
+/*  Spinner and new colours  */
+/*****************************/
+.ide_loader {
+  position: absolute !important;
+  right: 0px !important;
+  top: 0px !important;
+  width: 55px !important;
+  height: 55px !important; 
+  z-index: 5;
+}
+.spinner-orange {
+  border-color: #E47128;
+}
+.active .spinner-layer.spinner-orange {
+  /* durations: 4 * ARCTIME */
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, blue-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.spinner-dark-teal {
+  border-color: #00878F; 
+}
+.active .spinner-layer.spinner-dark-teal {
+  /* durations: 4 * ARCTIME */
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.spinner-yellow {
+  border-color: rgba(255, 204, 51, 1);
+}
+.active .spinner-layer.spinner-yellow {
+  /* durations: 4 * ARCTIME */
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, yellow-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.spinner-light-teal {
+  border-color: #62AEB2;
+}
+.active .spinner-layer.spinner-light-teal {
+  /* durations: 4 * ARCTIME */
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, green-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+.spinner-purple {
+  border-color: #8e24aa;
+}
+.active .spinner-layer.spinner-purple {
+  /* durations: 4 * ARCTIME */
+  -webkit-animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+  animation: fill-unfill-rotate 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both, red-fade-in-out 5332ms cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+
+/************************/
+/*  Modals and content  */
+/************************/
+/* Large modal section blocks */
+.modal_section {
+  margin: 24px 0px;
+  width: 100%;
+}
+
+/* Blocks tick label as a title */
+.modal_label_title {
+  font-size: 1.6rem !important;
+  color: black;
+}
+
+/* Blocks modal divider */
+#blocks_menu_body .divider {
+  margin-top: 4px;
+  margin-bottom: 8px;
+}
+
+/* Arduino output modal dialog */
+#arduino_dialog_body {
+  padding-top: 25px;
+}
+.arduino_dialog_out {}
+.arduino_dialog_out_error {
+  color: #E47128;   /* arduino orange */
+  padding-top: 25px;
+  display: block;
+}
+.arduino_dialog_success {
+  color: #00979C;   /* arduino light teal */
+}
+.arduino_dialog_failure {
+  color: #E47128;   /* arduino orange */
+}
+
+/* Footer buttons padding */
+.modal_right_button {
+  margin: 0px 0px 0px 48px !important;
+}
+
+/* Small modal responsive design */
+.modal_small {
+  height: auto !important;
+  min-height: 200px;
+}
+.modal_small .modal-content {
+  margin-top: 0;
+  padding-top: 12px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.modal_small input {
+  width: 100%;
+}
+@media only screen and (min-width: 0) {
+  .modal_small {
+    max-width: 75% !important;
+    width: 75% !important;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .modal_small {
+    max-width: 55% !important;
+    width: 55% !important;
+  }
+}
+@media only screen and (min-width: 993px) {
+  .modal_small {
+    max-width: 35% !important;
+    width: 35% !important;
+  }
+}
+
+
+/*****************/
+/*  Sketch name  */
+/*****************/
+.sketch_name_wrapper {
+  display: inline-block;
+  padding-left: 5px;
+}
+.sketch_name_icon {
+  display: inline !important;
+  font-size: 1.2rem !important;
+  float: right;
+  padding-top: 3px;
+}
+.sketch_name {
+  width: auto !important;
+  max-width: 400px;
+  line-height: 64px;
+  height: 3rem !important;
+  font-size: 1.5rem !important;
+  border-bottom: 0px solid #EEE !important;
+  font-style: italic;
+}
+.sketch_name:focus {
+    border-bottom: 1px solid #EEE !important;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  .sketch_name {
+    max-width: 200px;
+  }
+  /* Remove the "Ardublockly title only leaving the sketch name */
+  .app_title {
+    display: none;
+  }
+}
+@media only screen and (min-width : 600px) {
+  .sketch_name {
+    max-width: 275px;
+  }
+}
+@media only screen and (min-width : 993px) {
+  .sketch_name {
+    max-width: 350px;
+  }
+}
+
+
+/************/
+/*  Others  */
+/************/
+/* Edit logo for code and xml collapsibles */
+.collapsible_logo {
+  width: 3rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
+  font-weight: bold;
+  display: block;
+  float: left;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+/* Colours for the new and deleted code highlighting */
+.code_highlight_new {
+  background-color: rgba(255, 204, 51, 0.5); /* Arduino yellow 50% */
+}
+.code_highlight_deleted {
+  background-color: #FDBEBE;
+}
+
+
+/*****************************/
+/*  Overwriting Blockly CSS  */
+/*****************************/
+/* Blockly text for the following components:  */
+.blocklyTreeLabel,           /* Toolbox        */
+.blocklyText,                /* Block          */
+.goog-menuitem-content {     /* Drop down menu */
+  font-family: "Roboto", sans-serif!important;
+}
+
+/* Entire Blockly area, Toolbox dranw on top */
+.blocklySvg {
+  border-width: 0 !important;
+}
+
+/* Toolbox */
+.blocklyToolboxDiv {
+  border-color: #e0e0e0 !important;
+  border-width: 0px 1px 0px 0px !important;
+  -webkit-border-radius: 0px 4px 4px 0px !important;
+  -moz-border-radius: 4px 4px 0px 0px !important;
+  border-radius: 0px 4px 4px 0px !important;
+  border: none !important;
+  margin: 0px !important;
+  padding: 0px 0px 0px 0px !important;
+  background: rgba(98, 174, 178, .2) !important;  /* Arduino Light Teal  Blackground toolbox*/ 
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+ /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);*/
+ /* overflow: hidden !important;*/
+}
+.blocklyTreeRoot {
+  background-color: transparent !important; /*color backgroung toolbox*/
+  border: none !important;
+  margin: 36px 0px 0px 0px !important;
+  padding: 0px 1px !important;
+  height: -moz-calc(100% - 37px);     /* Firefox  */
+  height: -webkit-calc(100% - 37px);  /* WebKit   */
+  height: -o-calc(100% - 37px);       /* Opera    */
+  height: calc(100% - 37px);          /* Standard */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.blocklyTreeRow { /*button b*/
+  background: none !important; /*color button box*/
+  border: none !important;
+  margin: 0px 0px !important;
+  padding: 7px 16px 7px 0px !important;
+  box-sizing: content-box !important;
+}
+
+
+/*.blocklyTreeRow li:first-child a {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+.blocklyTreeRow li:nth-child(2):before {
+    background-color: #ec1b5a;   
+}
+.blocklyTreeRow li:nth-child(3):before {
+    background-color: #79aefe;   
+}
+.blocklyTreeRow li:nth-child(4):before {
+    background-color: #314190;   
+}
+.blocklyTreeRow li:nth-child(5):before {
+    background-color: #279636;   
+}
+.blocklyTreeRow li:nth-child(6):before {
+    background-color: #7d5d81;   
+}
+.blocklyTreeRow li:nth-child(7):before {
+    background-color: #ead24c;   
+}
+.blocklyTreeRow li:nth-child(8):before {
+    background-color: #2d2366;   
+}
+.blocklyTreeRow li:nth-child(9):before {
+    background-color: #35acdf;   
+}
+.blocklyTreeRow li:hover:before,
+.blocklyTreeRow li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+*/
+
+/*Menu select color **************************************************************************************************************************************/
+.blocklyTreeSelected {
+  background-color: #86b2e8 !important;  /* arduino orange #E47128 */ 
+}
+.blocklyTreeRow:not(.blocklyTreeSelected):hover {
+  background-color:  #8ae2b3 !important;  /* arduino yellow  rgba(255, 204, 51, 1)*/
+}
+.blocklyTreeLabel {
+        
+}
+.blocklyTreeSeparator{
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+/* Toolbox second column with blocks*/
+.blocklyFlyoutBackground {
+  fill: #d0ede0!important; /*Background choose Block*/
+  fill-opacity: 0.6 !important;
+  -webkit-border-radius: 0px 4px 4px 0px !important;
+  -moz-border-radius: 0px 4px 4px 0px !important;
+  border-radius: 0px 4px 4px 0px !important;
+}
+
+/* Blockly scrollbars */
+.blocklyScrollbarKnob { 
+  fill:  #6dbae8 !important;   /*#00878F*/
+  fill-opacity: 0.4 !important;
+}
+.blocklyScrollbarBackground {
+  stroke-width: 0px !important;
+  fill: none !important;
+
+}
+
+/* Edit select colour to Arduino yellow. (Edited out as already this colour)
+.blocklyHighlightedConnectionPath,
+.blocklySelected>.blocklyPath {
+  stroke: rgba(255, 204, 51, 1) !important;
+} */
+
+/*********************************/
+/*  Overwriting Materialize CSS  */
+/*********************************/
+/* Modify container to have a larger width in all resolutions */
+.container {
+  width: 99%;
+  max-width: initial !important;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  height: 90%;
+}
+@media only screen and (min-width : 601px) {
+  .container {
+    width: 95%;
+  }
+}
+@media only screen and (min-width : 993px) {
+  .container {
+    width: 100%;
+  }
+}
+@media only screen and (min-width : 1380px) {
+  .container {
+    width: 90%;
+  }
+}
+@media only screen and (min-width : 1920px) {
+  .container {
+    width: 100%;
+  }
+}
+/* Maximize horizontal space for mobile */
+@media only screen and (min-width: 0px) and (max-width: 600px) {
+  body {
+    padding-top: 0px;
+  }
+
+}
+
+  /* Expand to all visible horizontal space */
+ .container {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    
+  }
+  nav {
+    margin: 0 !important;
+   /* padding: 0px 12px !important;*/
+  }
+  /* remove space between cards and navigation bar */
+  .col {
+    margin-top: -44px;   /*position workspace and button compile 44*/
+  }
+
+/* Increase the text size of the side menu */
+
+ul.side-nav {
+ 
+  padding: 0px !important;
+  line-height: 64px !important;
+}
+ul.side-nav i {
+  font-size: 1.8rem !important;
+}
+ul.side-nav .collapsible {
+  margin: 0px !important;
+}
+/* Set the background effect in the side menu */
+ul.side-nav {
+  background-color: #ffffff;
+  box-shadow: #ffffff;  
+}
+ul.side-nav li {
+  background-color: #ffffff; }
+ul.side-nav li {
+
+  background-color: transparent;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /*border-right: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;*/
+}
+ul.side-nav li ul li ul { 
+  cursor: pointer;
+  border: none !important;
+  background-color: #ffffff; /*Blockgroung Examples*/
+  text-decoration-color: green;
+}
+ul.side-nav li ul li ul li {
+  border: none !important;
+  background-color: transparent;
+}
+
+/* Add extra margin to the side menu button*/
+.button-collapse {
+  margin-right: 120px;
+  left: 54px;
+ 
+}
+
+/* Increase the size of Materialize Modal in small resolutions */
+@media only screen and (max-width : 600px) {
+  .modal {
+    width: 80% !important;
+    max-width: 80% !important;
+    
+  }
+}
+
+/* Why the hell does button large has a predefined background colour !! */
+.btn-large:hover {
+  background-color: inherit;
+}
+
+/* Circle clipper (loading animation) thickness */
+.circle-clipper .circle {
+  border-width: 6px !important;
+}
+
+/* Materialize messes with these, so reset them here */
+.blocklyHtmlInput {
+  border: none !important;
+  border-radius: 4px !important;
+  font-family: sans-serif !important;
+  height: 100% !important;
+  margin: 0 !important;
+  outline: none !important;
+  padding: 0 1px !important;
+  width: 100% !important;
+  background-color: white !important;
+}
+
+/*sidenav for code arduino and xml*/
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 56px;
+    right: 0;
+    background-color: transparent;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.5s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    font-size: 36px;
+    margin-left: 50px;    
+}
+
+@media screen and (max-height: 500px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 220px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    left: 220px;
+    width: 0;
+    height: 100%;
+    margin-left: -220px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1a1a1a;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 220px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 70px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -220px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 220px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative; 
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 3px;
+    background-color: #1c1c1c;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+.sidebar-nav li:first-child a {
+    color: #fff;
+    background-color: #1a1a1a;
+}
+.sidebar-nav li:nth-child(2):before {
+    background-color: #ec1b5a;   
+}
+.sidebar-nav li:nth-child(3):before {
+    background-color: #79aefe;   
+}
+.sidebar-nav li:nth-child(4):before {
+    background-color: #314190;   
+}
+.sidebar-nav li:nth-child(5):before {
+    background-color: #279636;   
+}
+.sidebar-nav li:nth-child(6):before {
+    background-color: #7d5d81;   
+}
+.sidebar-nav li:nth-child(7):before {
+    background-color: #ead24c;   
+}
+.sidebar-nav li:nth-child(8):before {
+    background-color: #2d2366;   
+}
+.sidebar-nav li:nth-child(9):before {
+    background-color: #35acdf;   
+}
+.sidebar-nav li:hover:before,
+.sidebar-nav li.open:hover:before {
+    width: 100%;
+    -webkit-transition: width .2s ease-in;
+      -moz-transition:  width .2s ease-in;
+       -ms-transition:  width .2s ease-in;
+            transition: width .2s ease-in;
+
+}
+
+.sidebar-nav li a {
+    display: block;
+    color: #ddd;
+    text-decoration: none;
+    padding: 10px 15px 10px 30px;    
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus,
+.sidebar-nav li.open a:hover,
+.sidebar-nav li.open a:active,
+.sidebar-nav li.open a:focus{
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 44px;
+}
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    background-color: #222;
+    box-shadow: none;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+  position: fixed;
+  top: 20px;  
+  z-index: 999;
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-left: 15px;
+  background: transparent;
+  border: none;
+}
+.hamburger:hover,
+.hamburger:focus,
+.hamburger:active {
+  outline: none;
+}
+.hamburger.is-closed:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom,
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  width: 100%;
+}
+.hamburger.is-closed .hamb-top,
+.hamburger.is-closed .hamb-middle,
+.hamburger.is-closed .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-closed .hamb-top { 
+  top: 5px; 
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed .hamb-middle {
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger.is-closed .hamb-bottom {
+  bottom: 5px;  
+  -webkit-transition: all .35s ease-in-out;
+}
+
+.hamburger.is-closed:hover .hamb-top {
+  top: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-closed:hover .hamb-bottom {
+  bottom: 0;
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-middle,
+.hamburger.is-open .hamb-bottom {
+  background-color: #1a1a1a;
+}
+.hamburger.is-open .hamb-top,
+.hamburger.is-open .hamb-bottom {
+  top: 50%;
+  margin-top: -2px;  
+}
+.hamburger.is-open .hamb-top { 
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open .hamb-middle { display: none; }
+.hamburger.is-open .hamb-bottom {
+  -webkit-transform: rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s cubic-bezier(.73,1,.28,.08);
+}
+.hamburger.is-open:before {
+  content: '';
+  display: block;
+  width: 100px;
+  font-size: 14px;
+  color: #fff;
+  line-height: 32px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+.hamburger.is-open:hover:before {
+  opacity: 1;
+  display: block;
+  -webkit-transform: translate3d(-100px,0,0);
+  -webkit-transition: all .35s ease-in-out;
+}
+
+/*-------------------------------*/
+/*            Overlay            */
+/*-------------------------------*/
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(250,250,250,.8);
+    z-index: 1;
+}

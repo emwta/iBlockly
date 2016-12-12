@@ -1,0 +1,120 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="aq:#9RZti.-jB;DUmChQ" x="38" y="23">
+    <field name="Board">ipst</field>
+    <comment pinned="false" h="80" w="160">if you need use other board, you can choose board on dropdown.</comment>
+  </block>
+  <block type="arduino_functions" id="@+EuA*={n_=SOU({]B7h" x="35" y="68">
+    <statement name="LOOP_FUNC">
+      <block type="controls_for" id=".EC0Zk!mF?MN7;#B~rc:">
+        <field name="VAR">SpeedForward</field>
+        <comment pinned="false" h="80" w="160">// count speed motor forward 0-100.</comment>
+        <value name="FROM">
+          <block type="math_number" id="^VQmXbqh0}P*y.OO5(/;">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number" id="dqE.6O?1[qQ8*drjJrWu">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+        <value name="BY">
+          <block type="math_number" id="MqJ[?l!p#TM+4`dVu]]?">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="move" id="u8-))jPoP^w1I[4lQm2f">
+            <field name="STAT">fd</field>
+            <value name="speed">
+              <block type="variables_get" id="%O[qI99DFsIs@(T=wp(v">
+                <field name="VAR">SpeedForward</field>
+              </block>
+            </value>
+            <next>
+              <block type="glcd_variable_text" id="QuCNT8@5}d+48~@wfU{3">
+                <field name="VAR_TYPE">%d</field>
+                <field name="ROW">0</field>
+                <field name="COLUM">0</field>
+                <field name="PREFIX">SpeedFD = </field>
+                <field name="SUBFIX">    </field>
+                <comment pinned="false" h="80" w="160">Show speed motor forward.</comment>
+                <value name="VARIABLE_SETTYPE_INPUT">
+                  <block type="variables_get" id="wpu)M~7mw=qoU~11D-N]">
+                    <field name="VAR">SpeedForward</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="time_delay" id="zK8f}5[/])`1eKo(J)IO">
+            <comment pinned="false" h="80" w="160">Hold speed 1000, 2 second.</comment>
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="*~L!5a9^-akB0DW([EpU">
+                <field name="NUM">2000</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_for" id="@%iChN]vpN*%{h{t?}X-">
+                <field name="VAR">SpeedBackward</field>
+                <comment pinned="false" h="80" w="160">count speed motor backward 0-100.</comment>
+                <value name="FROM">
+                  <block type="math_number" id="Z)QP0S5kG{vCPo62Zlyd">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="4|OdCd%:SeFj%AJc_t:G">
+                    <field name="NUM">100</field>
+                  </block>
+                </value>
+                <value name="BY">
+                  <block type="math_number" id="G?y5T|!!]}x!*mj[ugdp">
+                    <field name="NUM">1</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="move" id="NN^`/Zs/+37QtkQ.AiXM">
+                    <field name="STAT">bk</field>
+                    <value name="speed">
+                      <block type="variables_get" id="w+ViZ[P9#]0R}[A0{VuN">
+                        <field name="VAR">SpeedBackward</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="glcd_variable_text" id="#nZny,jd`#H(%pNMEsG8">
+                        <field name="VAR_TYPE">%d</field>
+                        <field name="ROW">1</field>
+                        <field name="COLUM">0</field>
+                        <field name="PREFIX">SpeedBK = </field>
+                        <field name="SUBFIX">    </field>
+                        <comment pinned="false" h="80" w="160">Show speed motor backward.</comment>
+                        <value name="VARIABLE_SETTYPE_INPUT">
+                          <block type="variables_get" id="hV!Z+4y@nrk+@luORZ)s">
+                            <field name="VAR">SpeedBackward</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="time_delay" id="Jo-s/9!aNkHqA::RL}x-">
+                    <comment pinned="false" h="80" w="160">Hold speed 1000, 2 second.</comment>
+                    <value name="DELAY_TIME_MILI">
+                      <block type="math_number" id="U!VlH)p!p}rudq=;V;gL">
+                        <field name="NUM">2000</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

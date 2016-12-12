@@ -1,0 +1,21 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="inex_board" id="fQ]yi]XCNBhS]M),I`H=" x="141" y="92">
+    <field name="Board">ipst</field>
+  </block>
+  <block type="arduino_functions" id="UKJUqd[V6zh[mS,.6:9G" x="138" y="147">
+    <statement name="LOOP_FUNC">
+      <block type="beep" id="oF+ckG[#q7XbC_fQlz+L">
+        <field name="BeepPIN">18</field>
+        <next>
+          <block type="time_delay" id="@M-A#WTf^PAW2b=HT1Pc">
+            <value name="DELAY_TIME_MILI">
+              <block type="math_number" id="}o}|kYq;a_mo/Q.r=t7v">
+                <field name="NUM">1000</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
