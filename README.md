@@ -51,11 +51,11 @@ click iBlockly.exe
 3. Run iBlockly as defined in your installation method.
 3. Configure iBlockly to locate the Arduino IDE [following these instructions][6] or [Thai version][23].
 
-![running](http://doc.inex.co.th/wp-content/uploads/2016/11/asdasd-1024x525.png)
+![running](http://doc.inex.co.th/wp-content/uploads/2016/11/dddd.png)
 
 
 
-Credit
+## Credit
 
 This project has been inspired by [BlocklyDuino][16] and [Ardublockly][10].
 
