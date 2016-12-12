@@ -63,7 +63,7 @@ class ServerCompilerSettings(object):
 					   'POP-X2': 'arduino:avr:POP-X2',
 					   'IPST-SE': 'arduino:avr:IPST-SE',
 					   'ATX-2': 'arduino:avr:ATX2M',
-                       'Arduino R3B' : 'arduino:avr:UnoB',
+                       'i-Duino R3B' : 'arduino:avr:UnoB',
                        }
 
     # Class dictionary to contain the computer COM ports, dynamic content
