@@ -10,7 +10,7 @@ Before run iblockly you need set google chrome to default browser.
 |:-------------------:|:--------------------:|
 | [Download Link][2]  | [Download Link][3]    |
 
-3. DoubleClick icon ![icon](http://doc.inex.co.th/wp-content/uploads/2016/11/2016-12-08_152631.png), when you click this icon script python will be running. and then just to moment for iBlockly run on browser.
+3. Copy folder iBlock to desktop, Then doubleClick icon ![icon](http://doc.inex.co.th/wp-content/uploads/2016/11/2016-12-08_152631.png), when you click this icon script python will be running. and then just to moment for iBlockly run on browser.
 
 4. When iblockly run, first step you must choose path Arduino for program compile and upload.
 
