@@ -60,9 +60,9 @@ class ServerCompilerSettings(object):
                        'Nano': 'arduino:avr:nano',
                        'Leonardo': 'arduino:avr:leonardo',                       
                        'Mega': 'arduino:avr:mega',
-					   'POP-X2': 'arduino:avr:POP-X2',
-					   'IPST-SE': 'arduino:avr:IPST-SE',
-					   'ATX-2': 'arduino:avr:ATX2M',
+		       'POP-X2': 'arduino:avr:POP-X2',
+		       'IPST-SE': 'arduino:avr:IPST-SE',
+		       'ATX-2': 'arduino:avr:ATX2M',
                        'i-Duino R3B' : 'arduino:avr:UnoB',
                        }
 
