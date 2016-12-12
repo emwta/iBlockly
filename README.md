@@ -55,7 +55,7 @@ click iBlockly.exe
 
 
 
-## Credit
+Credit
 
 This project has been inspired by [BlocklyDuino][16] and [Ardublockly][10].
 
