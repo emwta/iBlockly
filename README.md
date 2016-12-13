@@ -1,7 +1,7 @@
 # iBlockly
 iBlockly is a visual programming editor for Arduino. It is based on Google's [Blockly][1], which has been forked to generate [Arduino][15] code.
 
-Support IPSE-SE ATX-2 POP-X2 Arduino R3B.
+Support IPSE-SE, ATX-2, POP-X2, i-Duino R3B.
 
 iBlockly The graphical software for Arduino-based microcontroller
 
