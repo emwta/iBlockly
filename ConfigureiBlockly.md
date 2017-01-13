@@ -2,7 +2,7 @@
 
 Before run iblockly you need set google chrome to default browser.
 
-Download and install [Python][1] version 3.5.2 or 2.7.xx (recommend 2.7.xx)
+Download and install [Python][1] version 3.5.2 or 2.7.12 (recommend 2.7.12)
 
 Download and install [Arduino from INEX version 1.7.11][4]
 
