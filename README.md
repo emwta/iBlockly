@@ -47,7 +47,7 @@ click iBlockly.exe
 
 ## Running
 1. Install the [Arduino IDE][2] version 1.7.11 or higher (latest version is always recommended).
-2. Install the [Python][22] version 3.5.x or 2.7.x (recommend 2.7.x)
+2. Install the [Python][22] version 3.5.x or 2.7.12
 3. Run iBlockly as defined in your installation method.
 3. Configure iBlockly to locate the Arduino IDE [following these instructions][6] or [Thai version][23].
 
