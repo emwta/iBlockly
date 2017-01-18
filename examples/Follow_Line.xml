@@ -12,7 +12,7 @@
         <field name="VAR">SensorR</field>
         <value name="VALUE">
           <block type="sensor_analog_read" id="k`Y|A_Nwtfz/{PykD)C-">
-            <field name="PIN">A0</field>
+            <field name="PIN">A1</field>
           </block>
         </value>
       </block>
