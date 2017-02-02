@@ -3,6 +3,7 @@
  *          http://www.apache.org/licenses/LICENSE-2.0
  *
  * @fileoverview XML toolbox embedded into a JavaScript text string.
+ * Create By Awiruth Wicharew Awillis inex Thailand
  */
 
 'use strict';
@@ -16,7 +17,6 @@ Ardublockly.TOOLBOX_XML =
 '	<block type="libraryme"></block>'+
 '	<block type="inex_board"></block>'+
 '	<block type="switch_ok"></block>'+
-'   <block type="xio"></block>'+
 '	</category>'+
 
 '  <sep></sep>' +
