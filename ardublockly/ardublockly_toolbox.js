@@ -3,7 +3,6 @@
  *          http://www.apache.org/licenses/LICENSE-2.0
  *
  * @fileoverview XML toolbox embedded into a JavaScript text string.
- * Create By Awiruth Wicharew Awillis inex Thailand
  */
 
 'use strict';
