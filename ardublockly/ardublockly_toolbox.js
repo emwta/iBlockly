@@ -269,7 +269,7 @@ Ardublockly.TOOLBOX_XML =
 '	</category>'+
 
 '    <sep></sep>' +
-'    <category id="GLCD" name="GLCD">' +
+'    <category id="GLCD" name="GLCD Text">' +
 '    <block type="glcd_mode"></block>' +
 '    <block type="glcd_set_text_size"></block>' +
 '    <block type="glcd_set_text_color"></block>' +
@@ -282,7 +282,7 @@ Ardublockly.TOOLBOX_XML =
 '  </category>' +
 
 '	<sep></sep>'+
-'		<category id="GraphicGLCD" name="Graphic GLCD">'+
+'		<category id="GraphicGLCD" name="GLCD Graphic">'+
 
 '	 <block type="glcd_line">'+
 '	 <value name="SX">' +
