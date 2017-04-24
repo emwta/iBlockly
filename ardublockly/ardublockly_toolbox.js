@@ -16,6 +16,7 @@ Ardublockly.TOOLBOX_XML =
 '	<block type="libraryme"></block>'+
 '	<block type="inex_board"></block>'+
 '	<block type="switch_ok"></block>'+
+/*'	<block type="controls_switch"></block>'+*/
 '	</category>'+
 
 '  <sep></sep>' +
@@ -477,4 +478,26 @@ Ardublockly.TOOLBOX_XML =
 '   <block type="uart1_getkey_var"></block>'+
 '   <block type="uart1_available"></block>'+
 ' 	 </category>' +
+'  <sep></sep>' +
+'  <category id="catLCD" name="LCD Display Shield">' +
+'	<block type="lcdlibrary"></block>'+
+'	<block type="lcdcursorprint">'+
+'		<value name="VALUE">'+
+'     		<shadow type="text">'+
+'       		<field name="TEXT">Hello World</field>'+
+'   		</shadow>'+
+'    	</value>'+
+'	</block>'+
+'	<block type="lcdclear"></block>'+
+'	<block type="lcdtone">'+
+'		<value name="SOUND">'+
+'     		<shadow type="math_number">'+
+'       		<field name="NUM">500</field>'+
+'   		</shadow>'+
+'    	</value>'+
+'	</block>'+
+'	<block type="lcdoffpiezo"></block>'+
+'	<block type="lcddisplay"></block>'+
+'	<block type="lcdnodisplay"></block>'+
+'	</category>'+
 '</xml>'

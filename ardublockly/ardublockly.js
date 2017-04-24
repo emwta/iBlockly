@@ -58,7 +58,7 @@ Ardublockly.bindActionFunctions = function() {
     $('.button-collapse').sideNav('hide');
   });
   Ardublockly.bindClick_('menu_example_1', function() {
-    Ardublockly.loadServerXmlFile('../examples/Show_Text_Analog .xml');
+    Ardublockly.loadServerXmlFile('../examples/Blinking.xml');
     $('.button-collapse').sideNav('hide');
   });
  Ardublockly.bindClick_('menu_example_2', function() {
